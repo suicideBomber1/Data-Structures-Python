@@ -12,8 +12,8 @@ class Node:
     def set_data(self, newdata):
         self.data = newdata
 
-    def set_next(self, newnext):
-        self.next = newnext
+    def set_next(self, newnode):
+        self.next = newnode
 
 
 temp = Node(93)
