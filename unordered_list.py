@@ -65,6 +65,67 @@ class Unordered_list:
         else:
             previous.set_next(current.get_next())
 
+    def append(self, item):
+        '''add items in the other direction compared to add_item'''
+        current = self.head
+        while current.get_next() != None:
+            current = current.get_next()
+        temp = Node(item)
+        temp.set_next(current.get_next)
+        current.set_next(temp)
+
+    def get_index(self, item):
+        '''get index of item assuming first one as zero'''
+        current = self.head
+        index = 0
+        while current != None:
+            if current.get_data() == item:
+                found = True
+            else:
+                index += 1
+                current = current.get_next()
+            if not found:
+                index = None
+
+        return index
+
+    def insert(self, pos, item):
+        '''insert an item at the position indicated'''
+        current = current.head
+        for i in range(0, pos):
+            current = current.get_next
+
+        if current != None:
+            temp = Node(item)
+            temp.set_next(current.get_next())
+            current.set_next(temp)
+
+        else:
+            raise("Index out of range")
+
+    def get_item(self, index):
+        current = self.head
+
+        for i in range(index):
+            current = current.get_next()
+
+        if current != None:
+            return current.get_data()
+
+        else:
+            raise("Index out of range")
+
+    # def pop(self, index):
+    #     self.remove(self.get_item(index))
+
+    def pop(self, index):
+        current = self.head
+        for i in range(index):
+            current = current.get_next()
+
+        if current != None:
+            self.remove(current.get_data())
+
 
 mylist = Unordered_list()
 mylist.add_item(31)
@@ -79,5 +140,5 @@ print(mylist.search(100))
 mylist.add_item(100)
 print(mylist.search(100))
 print(mylist.size())
-mylist.remove(93)
+mylist.pop(3)
 print(mylist.size())
