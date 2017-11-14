@@ -10,7 +10,7 @@ def infix_to_postfix(k):
     prec['('] = 1
     postfix = []
     opstack = Stack()
-    token_list = k.split()
+    token_list = list(k)
 
     for token in token_list:
         if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" or token in "0123456789":
@@ -29,7 +29,22 @@ def infix_to_postfix(k):
 
     while not opstack.isEmpty():
         postfix.append(opstack.pop())
-    return " ".join(postfix)
+    return "".join(postfix)
 
 
-print(infix_to_postfix("A * B + C * D"))
+
+def validate_input(expr):
+    if not expr:
+        return False
+    expr = expr.strip()
+    
+
+
+
+
+
+
+
+# print(infix_to_postfix("A * B + C * D"))
+# print(infix_to_postfix("( A + B ) * C - ( D - E ) * ( F + G )"))
+print(infix_to_postfix("2+7*5"))
