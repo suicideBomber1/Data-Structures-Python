@@ -1,4 +1,5 @@
 from pythonds.basic.stack import Stack
+<<<<<<< HEAD
 
 
 def infix_to_postfix(k):
@@ -33,3 +34,5 @@ def infix_to_postfix(k):
 
 
 print(infix_to_postfix("A * B + C * D"))
+=======
+>>>>>>> 3e1d66f242d62dc3fc32f7a567a73d43afe915df
